@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CV Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CV Builder</h1>
+        
+        <div id="form-section">
+            <form id="cv-form">
+                <h2>Personal Information</h2>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="title" placeholder="Job Title">
+                <input type="email" id="email" placeholder="Email">
+                <input type="tel" id="phone" placeholder="Phone">
+                <textarea id="address" placeholder="Address"></textarea>
+
+                <h2>Professional Summary</h2>
+                <textarea id="summary" placeholder="Brief summary about yourself"></textarea>
+
+                <h2>Work Experience (add multiple)</h2>
+                <div id="experience-list">
+                    <div class="experience-item">
+                        <input type="text" placeholder="Job Title">
+                        <input type="text" placeholder="Company">
+                        <input type="text" placeholder="Dates (e.g. 2020-2024)">
+                        <textarea placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <button type="button" onclick="addExperience()">Add Another Experience</button>
+
+                <h2>Education</h2>
+                <div id="education-list">
+                    <div class="education-item">
+                        <input type="text" placeholder="Degree">
+                        <input type="text" placeholder="Institution">
+                        <input type="text" placeholder="Dates">
+                    </div>
+                </div>
+                <button type="button" onclick="addEducation()">Add Another Education</button>
+
+                <h2>Skills</h2>
+                <textarea id="skills" placeholder="List skills separated by commas (e.g. JavaScript, Python, HTML)"></textarea>
+
+                <button type="button" onclick="generateCV()">Generate Resume</button>
+            </form>
+        </div>
+
+        <div id="preview-section" class="hidden">
+            <button onclick="printCV()">Print / Save as PDF</button>
+            <button onclick="backToForm()">Edit</button>
+            <div id="cv-preview"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
